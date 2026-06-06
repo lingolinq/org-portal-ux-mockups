@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Home (Org admin)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Lingo<span class="dot">Linq</span></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <a class="btn btn-amber btn-sm" href="#">Upgrade</a>
+      <button class="btn btn-ghost btn-sm" type="button">Beta feedback</button>
+      <button class="icon-btn" aria-label="Settings">&#9881;</button>
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="greeting">
+        <span class="emoji" aria-hidden="true">&#127970;</span>
+        <div>
+          <h1>Welcome back, Priya</h1>
+          <p class="subtle">District administrator - Maple Grove School District</p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Primary">
+        <a class="tab" href="02-home-admin.html" aria-current="page">Home</a>
+        <a class="tab" href="#">Boards</a>
+        <a class="tab" href="#">Reports</a>
+        <a class="tab" href="#">Extras</a>
+      </nav>
+    </div>
+
+    <!-- HERO ROW: organization health -->
+    <section class="card card-hero" style="margin-bottom:18px;">
+      <div class="card-head">
+        <h2 class="mt0">Organization health</h2>
+        <a class="btn btn-primary" href="04-org-portal-landing.html">Open Org Portal</a>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="num">18/22</div>
+          <div class="lbl">Student seats used</div>
+          <div class="progress amber"><span style="width:82%"></span></div>
+          <span class="pill pill-warn" style="margin-top:6px;"><span class="dot-status dot-warn" aria-hidden="true"></span>4 open</span>
+        </div>
+        <div class="kpi">
+          <div class="num">5</div>
+          <div class="lbl">Licenses expiring in 30 days</div>
+          <span class="pill pill-warn" style="margin-top:10px;"><span class="dot-status dot-warn" aria-hidden="true"></span>Renew soon</span>
+        </div>
+        <div class="kpi">
+          <div class="num">19/22</div>
+          <div class="lbl">Active in last 2 weeks</div>
+          <span class="pill pill-ok" style="margin-top:10px;"><span class="dot-status dot-ok" aria-hidden="true"></span>Healthy</span>
+        </div>
+        <div class="kpi">
+          <div class="num">64%</div>
+          <div class="lbl">Communicators with goals tracked</div>
+          <div class="progress"><span style="width:64%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECOND ROW: My Organizations prominent -->
+    <section class="card" style="margin-bottom:18px;">
+      <div class="card-head">
+        <h2 class="mt0">My organizations</h2>
+        <a class="btn btn-ghost btn-sm" href="#">Add sub-organization</a>
+      </div>
+      <a class="taplink" href="04-org-portal-landing.html">
+        <span aria-hidden="true">&#127970;</span>
+        <span class="lead">Maple Grove School District <span class="meta">22 seats - 4 schools</span></span>
+        <span class="chev" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="taplink" href="#">
+        <span aria-hidden="true">&#127979;</span>
+        <span class="lead">Maple Grove Elementary <span class="meta">Sub-organization - 9 seats</span></span>
+        <span class="chev" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="taplink" href="#">
+        <span aria-hidden="true">&#127979;</span>
+        <span class="lead">Birchwood Middle School <span class="meta">Sub-organization - 7 seats</span></span>
+        <span class="chev" aria-hidden="true">&rsaquo;</span>
+      </a>
+    </section>
+
+    <!-- THIRD ROW: speak mode + boards + extras (smaller) -->
+    <section class="row row-3">
+      <div class="card">
+        <h3 class="mt0">Speak mode</h3>
+        <p class="subtle">Try the speaking interface yourself.</p>
+        <a class="btn btn-ghost" href="#" style="margin-top:8px;">&#128483; Start speaking</a>
+      </div>
+      <div class="card">
+        <h3 class="mt0">Boards</h3>
+        <div class="board-grid">
+          <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#129504;</span>Core Blocks 60<span class="sub">Core</span></a>
+          <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#128218;</span>District Library<span class="sub">Shared</span></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h3 class="mt0">My caseload</h3>
+          <span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>2 need attention</span>
+        </div>
+        <p class="subtle" style="margin:4px 0 10px;">Priya also supervises her own communicators.</p>
+        <div class="num" style="font-size:2rem; line-height:1;">8</div>
+        <div class="lbl" style="margin-bottom:10px;">communicators</div>
+        <a class="btn btn-primary btn-sm" href="01-home-slp.html">Open caseload</a>
+      </div>
+    </section>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Role-aware Home: an admin sees organization health first, not a personal board carousel.</li>
+      <li>License utilization (seats used, expiring) is made visible up top instead of hidden in billing.</li>
+      <li>The over-broad, mislabeled "My Organizations" card is fixed: real org plus sub-orgs as clear links.</li>
+      <li>Dual-role admin+SLP: the Extras tile is replaced by My caseload, so an admin who also supervises gets one-tap caseload access alongside org health.</li>
+    </ul>
+  </aside>
+</body>
+</html>

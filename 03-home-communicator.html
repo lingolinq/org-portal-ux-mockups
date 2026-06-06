@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Home (Communicator)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Lingo<span class="dot">Linq</span></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="greeting" style="margin-bottom:18px;">
+      <span class="emoji" aria-hidden="true" style="font-size:3.2rem;">&#128075;</span>
+      <h1 style="font-size:2.6rem;">Hi Johnny</h1>
+    </div>
+
+    <!-- HERO: huge TALK -->
+    <button class="talk-hero" type="button">
+      <span class="talk-icon" aria-hidden="true">&#128483;</span>
+      <span class="talk-label">Talk</span>
+      <span class="talk-sub">Continue where you left off</span>
+    </button>
+
+    <!-- Boards as large symbol tiles, wrapping grid -->
+    <h2>My boards</h2>
+    <section class="board-grid symbol-grid">
+      <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#129504;</span>Core Blocks 60</a>
+      <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#129518;</span>Core Blocks 84</a>
+      <a class="board-tile crisis" href="#"><span class="sym" aria-hidden="true">&#128680;</span>Crisis Vocabulary<span class="sub">Get help fast</span></a>
+      <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#127869;</span>Snack Time</a>
+      <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#128522;</span>Feelings</a>
+      <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#9917;</span>Recess</a>
+    </section>
+
+    <!-- caregiver gate -->
+    <div class="gate">
+      <span class="lock" aria-hidden="true">&#128274;</span>
+      <span class="gate-text">For grown-ups: Settings &amp; account (press and hold)</span>
+    </div>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Talk is the hero filling the top - was a small secondary card before. Fastest path to communicate.</li>
+      <li>Board carousel replaced with a high-contrast wrapping symbol grid (no horizontal scroll).</li>
+      <li>Caregiver chrome (manage boards, upgrade, reports) moved behind a press-and-hold gate at the bottom.</li>
+      <li>Greeting is short and symbol-supported; no Upgrade button or beta pill on this screen.</li>
+      <li>Note: established users with a home board auto-launch into speak mode and never see this - it is the fallback for no-home-board, post-exit, or family use.</li>
+    </ul>
+  </aside>
+</body>
+</html>

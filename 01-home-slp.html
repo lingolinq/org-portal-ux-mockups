@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Home (SLP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Lingo<span class="dot">Linq</span></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <a class="btn btn-amber btn-sm" href="#">Upgrade</a>
+      <button class="btn btn-ghost btn-sm" type="button">Beta feedback</button>
+      <button class="icon-btn" aria-label="Settings">&#9881;</button>
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="greeting">
+        <span class="emoji" aria-hidden="true">&#128075;</span>
+        <div>
+          <h1>Welcome back, Dana</h1>
+          <p class="subtle">Speech-language pathologist - 2 rooms - 12 communicators</p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Primary">
+        <a class="tab" href="01-home-slp.html" aria-current="page">Home</a>
+        <a class="tab" href="#">Boards</a>
+        <a class="tab" href="#">Reports</a>
+        <a class="tab" href="#">Extras</a>
+      </nav>
+    </div>
+
+    <!-- HERO ROW: caseload dominant + rooms -->
+    <section class="row row-2">
+      <div class="card card-hero">
+        <div class="card-head">
+          <h2 class="mt0">My caseload</h2>
+          <span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>3 at risk</span>
+        </div>
+        <p class="big-num">12</p>
+        <p class="subtle" style="margin-top:4px;">communicators - 3 need attention this week</p>
+        <div class="flex" style="margin-top:16px;">
+          <a class="btn btn-primary" href="#">Open caseload</a>
+          <a class="btn btn-ghost" href="#">Add communicator</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="mt0">Rooms</h2>
+        <p class="subtle" style="margin-top:-4px;margin-bottom:12px;">Jump straight to a group.</p>
+        <a class="taplink" href="#">
+          <span aria-hidden="true">&#127979;</span>
+          <span class="lead">Room 14 <span class="meta">Ms. Patel - 7 communicators</span></span>
+          <span class="chev" aria-hidden="true">&rsaquo;</span>
+        </a>
+        <a class="taplink" href="#">
+          <span aria-hidden="true">&#128483;</span>
+          <span class="lead">Speech Group A <span class="meta">5 communicators</span></span>
+          <span class="chev" aria-hidden="true">&rsaquo;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECOND ROW: needs attention -->
+    <section class="card" style="margin-bottom:18px;">
+      <div class="card-head">
+        <h2 class="mt0">Needs attention</h2>
+        <span class="subtle">3 communicators</span>
+      </div>
+      <ul class="attn-list">
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Marcus T.</span>
+            <span><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>At risk</span> No session in 21 days</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Aisha R.</span>
+            <span><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>No goal set</span> Add a communication goal</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Leo M.</span>
+            <span><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>Never used</span> Set up but no sessions yet</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- THIRD ROW: speak mode + boards + extras -->
+    <section class="row row-3">
+      <div class="card">
+        <h3 class="mt0">Speak mode</h3>
+        <p class="subtle">Launch the speaking interface for a modeling session.</p>
+        <a class="btn btn-primary" href="#" style="margin-top:8px;">&#128483; Start speaking</a>
+      </div>
+      <div class="card">
+        <h3 class="mt0">Extras</h3>
+        <div class="stack" style="margin-top:6px;">
+          <a class="taplink" href="#"><span aria-hidden="true">&#127919;</span><span class="lead">Goals</span><span class="chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="taplink" href="#"><span aria-hidden="true">&#128202;</span><span class="lead">Quick reports</span><span class="chev" aria-hidden="true">&rsaquo;</span></a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="mt0">Manage organization</h3>
+        <p class="subtle">Visible only because you manage an org.</p>
+        <a class="taplink" href="04-org-portal-landing.html">
+          <span aria-hidden="true">&#127970;</span>
+          <span class="lead">Maple Grove SD <span class="meta">Org manager</span></span>
+          <span class="chev" aria-hidden="true">&rsaquo;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Boards as wrapping grid (no carousel) -->
+    <section class="card">
+      <div class="card-head">
+        <h2 class="mt0">My boards</h2>
+        <a class="btn btn-ghost btn-sm" href="#">See all boards</a>
+      </div>
+      <div class="board-grid">
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#129504;</span>Core Blocks 60<span class="sub">Core board</span></a>
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#128221;</span>Lesson: Weather<span class="sub">Activity</span></a>
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#127869;</span>Snack Time<span class="sub">Activity</span></a>
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#128522;</span>Feelings<span class="sub">Vocabulary</span></a>
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#9917;</span>Recess<span class="sub">Activity</span></a>
+        <a class="board-tile" href="#"><span class="sym" aria-hidden="true">&#128218;</span>Reading Group<span class="sub">Activity</span></a>
+      </div>
+    </section>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Caseload and Rooms promoted to the top hero row, above boards (the SLP's job comes first).</li>
+      <li>At-risk communicators surfaced with a red status pill plus text label, not buried.</li>
+      <li>Rooms are no longer buried far down the page; now large tapable links.</li>
+      <li>"My Organizations" card is correctly scoped and relabeled "Manage organization" (org managers only).</li>
+    </ul>
+  </aside>
+</body>
+</html>

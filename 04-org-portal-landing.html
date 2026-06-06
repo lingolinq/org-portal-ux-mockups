@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Org Portal Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Lingo<span class="dot">Linq</span></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <button class="btn btn-ghost btn-sm" type="button">Beta feedback</button>
+      <button class="icon-btn" aria-label="Settings">&#9881;</button>
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main class="wide">
+    <div class="page-head">
+      <div>
+        <h1>Maple Grove School District</h1>
+        <p class="subtle">Organization portal</p>
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Org portal" style="margin-bottom:18px;">
+      <a class="tab" href="04-org-portal-landing.html" aria-current="page">Overview</a>
+      <a class="tab" href="#">People</a>
+      <a class="tab" href="05-org-reports.html">Reports</a>
+      <a class="tab" href="#">Usage</a>
+      <a class="tab" href="#">Rooms</a>
+      <a class="tab" href="#">Training</a>
+      <a class="tab" href="#">Settings</a>
+    </nav>
+
+    <!-- HERO: license utilization, full width -->
+    <section class="card card-hero" style="margin-bottom:18px;">
+      <div class="card-head">
+        <h2 class="mt0">License utilization</h2>
+        <a class="btn btn-primary" href="#">Manage licenses</a>
+      </div>
+      <div class="row row-2" style="margin-bottom:0;">
+        <div>
+          <p class="big-num">18 <span class="muted" style="font-size:1.4rem;">of 22 student seats used</span></p>
+          <div class="progress" style="height:16px;"><span style="width:82%"></span></div>
+          <p class="subtle" style="margin-top:8px;">2 supervisor seats open</p>
+        </div>
+        <div class="stack" style="justify-content:center;">
+          <span class="pill pill-warn" style="align-self:flex-start;"><span class="dot-status dot-warn" aria-hidden="true"></span>5 licenses expire in 30 days</span>
+          <span class="pill pill-ok" style="align-self:flex-start;"><span class="dot-status dot-ok" aria-hidden="true"></span>Auto-renew enabled</span>
+          <span class="subtle">Next renewal: Sep 1, 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI strip -->
+    <section class="kpi-grid" style="margin-bottom:18px;">
+      <div class="kpi"><div class="num">47</div><div class="lbl">Recent sessions (7 days)</div></div>
+      <div class="kpi"><div class="num">19/22</div><div class="lbl">Recently-logged users</div></div>
+      <div class="kpi"><div class="num">2.7</div><div class="lbl">Recently-logged hours</div></div>
+      <div class="kpi"><div class="num">5d</div><div class="lbl">Since last session</div></div>
+    </section>
+
+    <!-- Needs attention -->
+    <section class="card" style="margin-bottom:18px;">
+      <div class="card-head">
+        <h2 class="mt0">Needs attention</h2>
+        <a class="btn btn-ghost btn-sm" href="05-org-reports.html">View all</a>
+      </div>
+      <ul class="attn-list">
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Marcus T. - Birchwood Middle</span>
+            <span><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>Inactive</span> No session in 21 days</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Aisha R. - Maple Grove Elementary</span>
+            <span><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>No goal</span> No communication goal set</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+        <li>
+          <span class="attn-left">
+            <span class="attn-name">Leo M. - Maple Grove Elementary</span>
+            <span><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>Never used</span> Account set up, no sessions yet</span>
+          </span>
+          <a class="btn btn-ghost btn-sm" href="#">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Charts row -->
+    <section class="row row-eq2">
+      <div class="card">
+        <h2 class="mt0">Sessions this week</h2>
+        <div class="bar-chart" role="img" aria-label="Bar chart of sessions per day: Monday 6, Tuesday 9, Wednesday 7, Thursday 11, Friday 8, Saturday 3, Sunday 3">
+          <div class="bar-col"><span class="bval">6</span><span class="bar" style="height:55%"></span><span class="blbl">Mon</span></div>
+          <div class="bar-col"><span class="bval">9</span><span class="bar" style="height:82%"></span><span class="blbl">Tue</span></div>
+          <div class="bar-col"><span class="bval">7</span><span class="bar" style="height:64%"></span><span class="blbl">Wed</span></div>
+          <div class="bar-col"><span class="bval">11</span><span class="bar" style="height:100%"></span><span class="blbl">Thu</span></div>
+          <div class="bar-col"><span class="bval">8</span><span class="bar" style="height:73%"></span><span class="blbl">Fri</span></div>
+          <div class="bar-col"><span class="bval">3</span><span class="bar" style="height:27%"></span><span class="blbl">Sat</span></div>
+          <div class="bar-col"><span class="bval">3</span><span class="bar" style="height:27%"></span><span class="blbl">Sun</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="mt0">Goal status</h2>
+        <div class="hbar-row">
+          <span class="hlbl">On track</span>
+          <span class="hbar-track"><span class="hbar-fill ok" style="width:58%">58%</span></span>
+          <span class="hval">13</span>
+        </div>
+        <div class="hbar-row">
+          <span class="hlbl">At risk</span>
+          <span class="hbar-track"><span class="hbar-fill warn" style="width:22%">22%</span></span>
+          <span class="hval">5</span>
+        </div>
+        <div class="hbar-row">
+          <span class="hlbl">No goal</span>
+          <span class="hbar-track"><span class="hbar-fill risk" style="width:20%">20%</span></span>
+          <span class="hval">4</span>
+        </div>
+
+        <div class="empty-state" style="margin-top:16px;">
+          <div class="es-icon" aria-hidden="true">&#127919;</div>
+          <p style="margin:6px 0 4px;color:var(--ink);font-weight:600;">No goal data yet for Birchwood Middle</p>
+          <p style="margin:0;">Here is how to set goals: open a communicator, choose Goals, and pick a target skill.</p>
+          <a class="btn btn-ghost btn-sm" href="#" style="margin-top:10px;">Set up goals</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Full-width layout replaces the narrow centered column that wasted the screen.</li>
+      <li>License utilization is now the hero element - the current app never surfaces it.</li>
+      <li>Status colors are functional and always paired with a text label (green / amber / red).</li>
+      <li>The gray pie is replaced with labeled horizontal bars, plus a real empty-state card.</li>
+      <li>Tabs renamed to tasks: Overview / People / Reports / Usage / Rooms / Training / Settings.</li>
+    </ul>
+  </aside>
+</body>
+</html>

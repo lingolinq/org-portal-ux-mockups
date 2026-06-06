@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Org Portal Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Lingo<span class="dot">Linq</span></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <button class="btn btn-ghost btn-sm" type="button">Beta feedback</button>
+      <button class="icon-btn" aria-label="Settings">&#9881;</button>
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main class="wide">
+    <div class="page-head">
+      <div>
+        <h1>Maple Grove School District</h1>
+        <p class="subtle">Organization portal</p>
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Org portal" style="margin-bottom:18px;">
+      <a class="tab" href="04-org-portal-landing.html">Overview</a>
+      <a class="tab" href="#">People</a>
+      <a class="tab" href="05-org-reports.html" aria-current="page">Reports</a>
+      <a class="tab" href="#">Usage</a>
+      <a class="tab" href="#">Rooms</a>
+      <a class="tab" href="#">Training</a>
+      <a class="tab" href="#">Settings</a>
+    </nav>
+
+    <!-- Controls bar -->
+    <section class="card" style="margin-bottom:18px;">
+      <div class="controls">
+        <div class="field">
+          <label for="rtype">Report type</label>
+          <select id="rtype">
+            <option>Usage summary</option>
+            <option>Goal progress</option>
+            <option>Session detail</option>
+            <option>License activity</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Date range</label>
+          <div class="daterange">
+            <input type="date" value="2026-05-01" aria-label="Start date" />
+            <span class="sep" aria-hidden="true">to</span>
+            <input type="date" value="2026-05-31" aria-label="End date" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rsearch">Search user</label>
+          <input type="search" id="rsearch" placeholder="Name or email" />
+        </div>
+        <div class="field" style="margin-left:auto;">
+          <label>&nbsp;</label>
+          <div class="split">
+            <button class="btn btn-primary" type="button" aria-haspopup="true" aria-expanded="true">Export &#9662;</button>
+            <div class="split-menu" role="menu">
+              <a href="#" role="menuitem">Export CSV</a>
+              <a href="#" role="menuitem">Export PDF</a>
+              <a href="#" role="menuitem">Schedule email...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary strip with removable chips -->
+    <div class="summary-strip">
+      <span class="count">8 communicators</span>
+      <span class="muted">Applied filters:</span>
+      <div class="chips">
+        <span class="chip">Usage summary <button aria-label="Remove report type filter">&times;</button></span>
+        <span class="chip">May 1 - May 31, 2026 <button aria-label="Remove date range filter">&times;</button></span>
+        <span class="chip">All schools <button aria-label="Remove school filter">&times;</button></span>
+      </div>
+    </div>
+
+    <!-- Results table -->
+    <div class="table-wrap">
+      <table class="data">
+        <caption class="muted" style="text-align:left;padding:10px 14px;">Usage summary - May 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">User</th>
+            <th scope="col">Last session</th>
+            <th scope="col">Sessions (30d)</th>
+            <th scope="col">Hours</th>
+            <th scope="col">Goal status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Johnny A.</td><td>1 day ago</td><td>14</td><td>3.2</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>On track</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Aisha R.</td><td>2 days ago</td><td>9</td><td>1.8</td>
+            <td><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>No goal</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Marcus T.</td><td>21 days ago</td><td>1</td><td>0.3</td>
+            <td><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>At risk</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Leo M.</td><td>Never</td><td>0</td><td>0.0</td>
+            <td><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>No goal</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Sofia K.</td><td>3 days ago</td><td>11</td><td>2.4</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>On track</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Devon P.</td><td>9 days ago</td><td>4</td><td>0.9</td>
+            <td><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>At risk</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Mia L.</td><td>Today</td><td>16</td><td>3.9</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>On track</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Noah B.</td><td>5 days ago</td><td>7</td><td>1.5</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>On track</span></td>
+            <td><a class="btn btn-ghost" href="#">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Date-range picker added - the current Reports tab has no date filtering at all.</li>
+      <li>Export split-button adds PDF and "Schedule email..." alongside CSV.</li>
+      <li>Goal status shown as labeled pills (On track / At risk / No goal), never color alone.</li>
+      <li>Applied filters surface as removable chips above a semantic results table.</li>
+    </ul>
+  </aside>
+</body>
+</html>
