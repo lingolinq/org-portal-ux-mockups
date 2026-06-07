@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoLinq - Org Portal People</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <!-- Expression: Product UI (DESIGN.md S14). Fake/sample data only - no real people. -->
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="lingolinq-logo.png" alt="LingoLinq logo" height="30" /></a>
+    <div class="search" role="search">
+      <span aria-hidden="true">&#128269;</span>
+      <input type="search" placeholder="Search boards" aria-label="Search boards" />
+    </div>
+    <div class="topbar-right">
+      <button class="btn btn-ghost btn-sm" type="button">Beta feedback</button>
+      <button class="icon-btn" aria-label="Settings">&#9881;</button>
+      <button class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main class="wide">
+    <div class="page-head">
+      <div>
+        <h1>Maple Grove School District</h1>
+        <p class="subtle">Organization portal</p>
+      </div>
+      <button class="btn btn-primary" type="button">+ Add people</button>
+    </div>
+
+    <nav class="tabs" aria-label="Org portal" style="margin-bottom:18px;">
+      <a class="tab" href="04-org-portal-landing.html">Overview</a>
+      <a class="tab" href="06-org-people.html" aria-current="page">People</a>
+      <a class="tab" href="05-org-reports.html">Reports</a>
+      <a class="tab" href="#">Usage</a>
+      <a class="tab" href="#">Rooms</a>
+      <a class="tab" href="#">Training</a>
+      <a class="tab" href="#">Settings</a>
+    </nav>
+
+    <!-- Role facet sub-nav (mirrors the 5 real roster sections) with live counts -->
+    <nav class="tabs" aria-label="People by role" style="margin-bottom:16px;">
+      <a class="tab" href="#">Managers <span class="count">3</span></a>
+      <a class="tab" href="#">Supervisors <span class="count">12</span></a>
+      <a class="tab active" href="#" aria-current="page">Communicators <span class="count">42</span></a>
+      <a class="tab" href="#">Evals <span class="count">5</span></a>
+      <a class="tab" href="#">Symbols <span class="count">7</span></a>
+    </nav>
+
+    <!-- Seat-usage + search/filter controls -->
+    <section class="card" style="margin-bottom:18px;">
+      <div class="controls" style="align-items:center;">
+        <div class="seat-meter">
+          <div class="seat-head">
+            <span>Communicator seats</span>
+            <span><b>42</b> of 50 used &middot; 8 open</span>
+          </div>
+          <div class="progress"><span style="width:84%;"></span></div>
+        </div>
+        <div class="field">
+          <label for="psearch">Search people</label>
+          <input type="search" id="psearch" placeholder="Name or username" />
+        </div>
+        <div class="field">
+          <label for="pstatus">Status</label>
+          <select id="pstatus">
+            <option>All statuses</option>
+            <option>Active</option>
+            <option>Inactive (no recent session)</option>
+            <option>Pending invite</option>
+            <option>No goal set</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="psup">Supervisor</label>
+          <select id="psup">
+            <option>Any supervisor</option>
+            <option>Ms. Rivera</option>
+            <option>Mr. Chen</option>
+            <option>Unassigned</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applied filters as removable chips -->
+    <div class="summary-strip">
+      <span class="count">42 communicators</span>
+      <span class="muted">Filters:</span>
+      <div class="chips">
+        <span class="chip">Communicators <button aria-label="Remove role filter">&times;</button></span>
+        <span class="chip">All statuses <button aria-label="Remove status filter">&times;</button></span>
+      </div>
+    </div>
+
+    <!-- Roster table with multi-select -->
+    <div class="table-wrap">
+      <table class="data">
+        <caption class="muted" style="text-align:left;padding:10px 14px;">
+          Real names are visible to full managers only; supervisors and assistants see usernames.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" class="check">
+              <label class="check-target" title="Select all on this page">
+                <input type="checkbox" class="rowcheck" aria-label="Select all communicators on this page" />
+              </label>
+            </th>
+            <th scope="col">Communicator</th>
+            <th scope="col">Supervisor</th>
+            <th scope="col">Status</th>
+            <th scope="col">Last active</th>
+            <th scope="col">Seat</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="selected">
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" checked aria-label="Select Johnny A." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">JA</span><div class="stack"><span class="uname">johnnya</span><span class="rname">Johnny A.</span></div></div></td>
+            <td>Ms. Rivera</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>Active</span></td>
+            <td>1 day ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr class="selected">
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" checked aria-label="Select Aisha R." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">AR</span><div class="stack"><span class="uname">aishar</span><span class="rname">Aisha R.</span></div></div></td>
+            <td>Mr. Chen</td>
+            <td><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>No goal</span></td>
+            <td>2 days ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr class="selected">
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" checked aria-label="Select Marcus T." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">MT</span><div class="stack"><span class="uname">marcust</span><span class="rname">Marcus T.</span></div></div></td>
+            <td>Ms. Rivera</td>
+            <td><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>At risk</span></td>
+            <td>21 days ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" aria-label="Select Leo M." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">LM</span><div class="stack"><span class="uname">leom</span><span class="rname">Leo M.</span></div></div></td>
+            <td class="muted">Unassigned</td>
+            <td><span class="pill pill-warn"><span class="dot-status dot-warn" aria-hidden="true"></span>Pending invite</span></td>
+            <td class="muted">Never</td>
+            <td><span class="pill pill-neutral">Unsponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" aria-label="Select Sofia K." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">SK</span><div class="stack"><span class="uname">sofiak</span><span class="rname">Sofia K.</span></div></div></td>
+            <td>Mr. Chen</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>Active</span></td>
+            <td>3 days ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" aria-label="Select Devon P." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">DP</span><div class="stack"><span class="uname">devonp</span><span class="rname">Devon P.</span></div></div></td>
+            <td>Ms. Rivera</td>
+            <td><span class="pill pill-risk"><span class="dot-status dot-risk" aria-hidden="true"></span>At risk</span></td>
+            <td>9 days ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" aria-label="Select Mia L." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">ML</span><div class="stack"><span class="uname">mial</span><span class="rname">Mia L.</span></div></div></td>
+            <td>Mr. Chen</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>Active</span></td>
+            <td>Today</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+          <tr>
+            <td class="check"><label class="check-target"><input type="checkbox" class="rowcheck" aria-label="Select Noah B." /></label></td>
+            <td><div class="roster-name"><span class="avatar" aria-hidden="true">NB</span><div class="stack"><span class="uname">noahb</span><span class="rname">Noah B.</span></div></div></td>
+            <td>Ms. Rivera</td>
+            <td><span class="pill pill-ok"><span class="dot-status dot-ok" aria-hidden="true"></span>Active</span></td>
+            <td>5 days ago</td>
+            <td><span class="pill pill-neutral">Sponsored</span></td>
+            <td><a class="btn btn-ghost btn-sm" href="#">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sticky bulk-action bar - shown here in its active (3 selected) state -->
+    <div class="bulkbar" role="region" aria-label="Bulk actions">
+      <span class="sel-count" aria-live="polite">3 selected</span>
+      <a href="#" class="subtle">Select all 42 matching</a>
+      <span class="spacer"></span>
+      <button class="btn btn-ghost btn-sm" type="button">Assign supervisor</button>
+      <button class="btn btn-ghost btn-sm" type="button">Add to room</button>
+      <button class="btn btn-ghost btn-sm" type="button">Export</button>
+      <button class="btn btn-danger btn-sm" type="button">Remove from org</button>
+    </div>
+  </main>
+
+  <aside class="annotations" aria-label="What changed on this screen">
+    <h4>What changed here <button class="x" aria-label="Dismiss">&times;</button></h4>
+    <ul>
+      <li>Multi-select with a sticky bulk-action bar - the current People tab adds and removes one user at a time.</li>
+      <li>Search + status + supervisor filters above a semantic, sortable roster table.</li>
+      <li>Seat usage is shown inline so admins see remaining licenses before bulk-adding.</li>
+      <li>Status as labeled pills (Active / No goal / At risk / Pending), never color alone.</li>
+      <li>Real names gated to full managers; everyone else sees usernames (mirrors permissions.manage).</li>
+    </ul>
+  </aside>
+</body>
+</html>
