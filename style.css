@@ -2,11 +2,15 @@
 
 :root {
   --canvas: #F7F7FB;
-  --ink: #374151;
+  --ink: #374151;            /* Charcoal - body text (DESIGN.md S14, AAA 10.31:1) */
   --ink-soft: #4B5563;
-  --amber: #F2B95A;
-  --brand-blue: #3B6CB7;
-  --brand-blue-dark: #2F578F;
+  --amber: #F2B95A;          /* Amber - fills/borders only, never text, one callout per view */
+  /* DESIGN.md S14 "one brand, two expressions" - product palette.
+     Deep Purple = single primary (solid fills/actions); Cornflower = interactive (links/focus). */
+  --primary: #22215A;        /* Deep Purple - primary fills, solid actions, active states (AAA 14.65:1) */
+  --primary-dark: #16153B;   /* hover/active for primary fills */
+  --interactive: #4C86D8;    /* Cornflower - links (underlined), focus rings, text actions (~4.6:1) */
+  --interactive-dark: #3A6FBE;
   --ok: #2E7D5B;
   --warn: #B7791F;
   --risk: #B42318;
@@ -33,7 +37,7 @@ body {
   min-height: 100vh;
 }
 
-a { color: var(--brand-blue); }
+a { color: var(--interactive); text-decoration: underline; }
 
 h1, h2, h3 { font-family: "Lexend", system-ui, sans-serif; color: var(--ink); margin: 0 0 .4em; line-height: 1.25; }
 h1 { font-size: 1.9rem; font-weight: 700; }
@@ -44,7 +48,7 @@ p { margin: 0 0 .6em; }
 
 /* ---------- focus visibility (WCAG 2.4.7) ---------- */
 :focus-visible {
-  outline: 3px solid var(--brand-blue);
+  outline: 3px solid var(--interactive);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -110,9 +114,9 @@ p { margin: 0 0 .6em; }
   text-decoration: none;
   white-space: nowrap;
 }
-.btn-primary { background: var(--brand-blue); color: #fff; }
-.btn-primary:hover { background: var(--brand-blue-dark); }
-.btn-ghost { background: #fff; color: var(--brand-blue); border-color: var(--border); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-ghost { background: #fff; color: var(--interactive); border-color: var(--border); }
 .btn-ghost:hover { background: #F3F6FB; }
 .btn-amber { background: var(--amber); color: #4A340A; }
 .icon-btn {
@@ -158,7 +162,7 @@ p { margin: 0 0 .6em; }
 }
 .tab:hover { background: #F1F4FA; color: var(--ink); }
 .tab[aria-current="page"], .tab.active {
-  background: var(--brand-blue);
+  background: var(--primary);
   color: #fff;
 }
 
@@ -232,7 +236,7 @@ main.wide { max-width: 1320px; }
 .taplink:last-child { margin-bottom: 0; }
 .taplink .meta { font-weight: 400; color: var(--ink-soft); font-size: .9rem; }
 .taplink .lead { display: flex; flex-direction: column; }
-.taplink .chev { margin-left: auto; color: var(--brand-blue); font-weight: 700; }
+.taplink .chev { margin-left: auto; color: var(--interactive); font-weight: 700; }
 
 /* ---------- KPI tiles ---------- */
 .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -250,7 +254,7 @@ main.wide { max-width: 1320px; }
   height: 12px; border-radius: 999px; background: #E9ECF3;
   overflow: hidden; border: 1px solid var(--border); margin: 8px 0;
 }
-.progress > span { display: block; height: 100%; background: var(--brand-blue); border-radius: 999px; }
+.progress > span { display: block; height: 100%; background: var(--primary); border-radius: 999px; }
 .progress.amber > span { background: var(--amber); }
 
 /* ---------- board / symbol grid ---------- */
@@ -281,7 +285,7 @@ main.wide { max-width: 1320px; }
 .talk-hero {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 10px; min-height: 240px; width: 100%;
-  background: linear-gradient(160deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+  background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: #fff; border: 0; border-radius: 22px; cursor: pointer;
   box-shadow: var(--shadow-lg); margin-bottom: 22px; text-align: center; padding: 24px;
 }
@@ -353,7 +357,7 @@ table.data td .btn { padding: 7px 14px; min-height: 40px; }
 /* ---------- charts (pure CSS) ---------- */
 .bar-chart { display: flex; align-items: flex-end; gap: 10px; height: 170px; padding-top: 8px; }
 .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; justify-content: flex-end; height: 100%; }
-.bar { width: 100%; max-width: 42px; background: var(--brand-blue); border-radius: 6px 6px 0 0; }
+.bar { width: 100%; max-width: 42px; background: var(--primary); border-radius: 6px 6px 0 0; }
 .bar-col .blbl { font-size: .78rem; color: var(--ink-soft); }
 .bar-col .bval { font-size: .78rem; font-weight: 600; color: var(--ink); }
 
@@ -389,7 +393,7 @@ table.data td .btn { padding: 7px 14px; min-height: 40px; }
 /* ---------- gallery (index) ---------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
 .gallery-card { display: block; text-decoration: none; color: var(--ink); }
-.gallery-card .tag { font-size: .78rem; font-weight: 700; color: var(--brand-blue); letter-spacing: .04em; text-transform: uppercase; }
+.gallery-card .tag { font-size: .78rem; font-weight: 700; color: var(--primary); letter-spacing: .04em; text-transform: uppercase; }
 .gallery-card h3 { margin: 6px 0; }
 .gallery-card p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
 .gallery-card:hover { box-shadow: var(--shadow-lg); border-color: #C9D6EC; }
